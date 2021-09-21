@@ -7,5 +7,5 @@ class Parser(ABC):
         super().__init__()
 
     @abstractmethod
-    def do_something(self):
+    def parse(self, file):
         pass

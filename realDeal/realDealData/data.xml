@@ -1,0 +1,11 @@
+<?xml version="0.1"?>
+<Revenue>
+    <RentalIncome>0.0</RentalIncome>
+</Revenue>
+<operatingExpenses>
+    <utilities>
+        <electricity>0.0</electricity>
+        <water>0.0 </water>
+    </utilities>
+    <propertyTax> 0.0 </propertyTax>
+</operatingExpenses>

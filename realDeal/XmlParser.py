@@ -1,6 +1,8 @@
+import xml.etree.ElementTree as ET
 from .Parser import Parser
 
 class XmlParser(Parser):
 
-    def do_something(self):
-        return self.value + 32
+    def parse(self, file):
+        ET.parse(file)
+        return file

@@ -6,4 +6,4 @@ class TestXmlParser():
         self.p = XmlParser(10)
 
     def test_doSomething(self):
-        assert self.p.do_something() == 42
+        assert self.p.parse("realDealData/data.xml") == "realDealData/data.xml"
