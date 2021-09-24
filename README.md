@@ -14,13 +14,13 @@ The data.xml are all variables required by the equations. This can include reven
 
 ```
 <operatingExpense name="electricity">
-		<value>1.0</value>
+        <value>1.0</value>
         <type>utility</type>
 </operatingExpense>
 
 <operatingExpense name="water">
-	<value>2.0</value>
-	<type>utility</type>
+    <value>2.0</value>
+    <type>utility</type>
 </operatingExpense>
 ```
 
@@ -31,6 +31,25 @@ The data.xml are all variables required by the equations. This can include reven
 - Pip
 - Pipenv
 
-## Build
+### Setup
+1. Install Python 3.9 or Greater
+    - (Ensure Python is added to you PATH)
+    - This version is required for pipenv
+    - Pip should be installed by default
+2. Install Pipenv
+    - The command to install is the following:
+    ```
+        pip install pipenv
+    ```
+3. Run virtual environment
+    - Start pipenv with the following:
+    ```
+        pipenv install
+    ```
+    - Start the virtual environment shell with the following:
+    ```
+        pipenv shell
+    ```
 
 ## Automated Unit Tests
+Automated unit test are executed using Pytest. 
