@@ -32,5 +32,14 @@ class XmlParser(Parser):
                 raise Exception("XML item does not exist")
         return sum
 
-    def findItemEnabled(self):
-        return super().findItemEnabled()
+    def findItemEnabled(self, itemName, itemEnabled):
+        for item in self.root.findall(itemName):
+            value = item.find(itemEnabled)
+            if value != None:
+                valueText = value.text
+                if valueText == "True" or valueText == "true":
+                    return True
+                else:
+                    return False
+            else:
+                raise Exception("XML item does not exist")
