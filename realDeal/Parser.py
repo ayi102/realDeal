@@ -13,3 +13,7 @@ class Parser(ABC):
     @abstractmethod
     def findItemSum(self):
         pass
+
+    @abstractmethod
+    def findItemEnabled(self):
+        pass

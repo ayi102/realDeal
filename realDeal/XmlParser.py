@@ -31,3 +31,6 @@ class XmlParser(Parser):
             else:
                 raise Exception("XML item does not exist")
         return sum
+
+    def findItemEnabled(self):
+        return super().findItemEnabled()
