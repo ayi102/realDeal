@@ -3,12 +3,14 @@ from .Parser import Parser
 
 class XmlParser(Parser):
 
-    def parse(self, file):
+    def __init__(self, file):
+        self.file = file
+        # create element tree object
+        self.root = ET.parse(self.file).getroot()
+
+    def parse(self):
         revenueSum          = 0.0
         operatingExpenseSum = 0.0
-
-        # create element tree object
-        root = ET.parse(file).getroot()
 
         revenueSum          = self.__findItemSum(root, 'revenue', 'value')
         operatingExpenseSum = self.__findItemSum(root, 'operatingExpense', 'value')
@@ -16,10 +18,16 @@ class XmlParser(Parser):
         return {"revenue":revenueSum,
                 "operatingExpenses": operatingExpenseSum}
 
-    def __findItemSum(self, xmlRoot, itemName, itemAttribute):
+    def findItemSum(self, itemName, itemValue):
         sum = 0.0
-        for item in xmlRoot.findall(itemName):
-            value = item.find(itemAttribute).text
-            sum   = sum + float(value)
-
+        for item in self.root.findall(itemName):
+            value = item.find(itemValue)
+            if value != None:
+                valueText = value.text
+                try:
+                    sum   = sum + float(valueText)
+                except:
+                    raise Exception("XML item is not a float value")
+            else:
+                raise Exception("XML item does not exist")
         return sum

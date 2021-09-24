@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <RealDealData>
     <revenue name="rentalIncome">
-        <value>0.0</value>
+        <value>"test"</value>
         <type>rent</type>
     </revenue>
 
+    <revenue name="parking">
+        <type>fee</type>
+    </revenue>
+
     <operatingExpense name="electricity">
-        <value>0.0</value>
         <type>utility</type>
     </operatingExpense>
 
     <operatingExpense name="water">
-        <value>0.0</value>
         <type>utility</type>
     </operatingExpense>
 
     <operatingExpense name="propertyTax">
-        <value>0.0</value>
         <type>taxes</type>
     </operatingExpense>
 </RealDealData>

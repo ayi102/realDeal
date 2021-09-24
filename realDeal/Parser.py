@@ -2,10 +2,14 @@ from abc import ABC, abstractmethod
 
 class Parser(ABC):
 
-    def __init__(self, value):
-        self.value = value
-        super().__init__()
+    @abstractmethod
+    def __init__(self, file):
+        self.file = file
 
     @abstractmethod
-    def parse(self, file):
+    def parse(self):
+        pass
+
+    @abstractmethod
+    def findItemSum(self):
         pass
