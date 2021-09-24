@@ -1,8 +1,14 @@
-from .XmlParser import XmlParser
-from .Noi       import Noi
+from XmlParser import XmlParser
+from Noi       import Noi
+from Utilities import *
 
-dataXml      = XmlParser("realDealXml/data.xml")
-equationsXml = XmlParser("realDealXml/equation.xml")
+dataXmlPath     = Utilities.get_absolute_path(
+                    "realDealXml/data.xml")
+equationXmlPath = Utilities.get_absolute_path(
+                    "realDealXml/equation.xml")
+
+dataXml      = XmlParser(dataXmlPath)
+equationsXml = XmlParser(equationXmlPath)
 
 noi = Noi("Noi")
 
