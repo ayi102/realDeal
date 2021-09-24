@@ -8,19 +8,9 @@ class XmlParser(Parser):
         # create element tree object
         self.root = ET.parse(self.file).getroot()
 
-    def parse(self):
-        revenueSum          = 0.0
-        operatingExpenseSum = 0.0
-
-        revenueSum          = self.__findItemSum(root, 'revenue', 'value')
-        operatingExpenseSum = self.__findItemSum(root, 'operatingExpense', 'value')
-
-        return {"revenue":revenueSum,
-                "operatingExpenses": operatingExpenseSum}
-
-    def findItemSum(self, itemName, itemValue):
+    def findItemSum(self, item, itemValue):
         sum = 0.0
-        for item in self.root.findall(itemName):
+        for item in self.root.findall(item):
             value = item.find(itemValue)
             if value != None:
                 valueText = value.text
@@ -29,17 +19,19 @@ class XmlParser(Parser):
                 except:
                     raise Exception("XML item is not a float value")
             else:
-                raise Exception("XML item does not exist")
+                raise Exception("XML item attribute does not exist")
         return sum
 
-    def findItemEnabled(self, itemName, itemEnabled):
-        for item in self.root.findall(itemName):
-            value = item.find(itemEnabled)
-            if value != None:
-                valueText = value.text
-                if valueText == "True" or valueText == "true":
-                    return True
+    def findItemEnabled(self, item, itemName, itemEnabled):
+        for item in self.root.findall(item):
+            if item.attrib["name"] == itemName:
+                value = item.find(itemEnabled)
+                if value != None:
+                    valueText = value.text
+                    if valueText == "True" or valueText == "true":
+                        return True
+                    else:
+                        return False
                 else:
-                    return False
-            else:
-                raise Exception("XML item does not exist")
+                    raise Exception("XML item attribute does not exist")
+        raise Exception("XML item does not exist")

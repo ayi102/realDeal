@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<RealDealEquations>
+    <equation name="NOI">
+        <enabasdfled>True</enabasdfled>
+    </equation>
+
+    <asdf name="eq2">
+        <enabled>False</enabled>
+    </asdf>
+</RealDealEquations>

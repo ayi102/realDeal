@@ -7,13 +7,9 @@ class Parser(ABC):
         self.file = file
 
     @abstractmethod
-    def parse(self):
+    def findItemSum(self, item, itemValue):
         pass
 
     @abstractmethod
-    def findItemSum(self):
-        pass
-
-    @abstractmethod
-    def findItemEnabled(self):
+    def findItemEnabled(self, item, itemName, itemEnabled):
         pass
