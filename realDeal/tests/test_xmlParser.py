@@ -1,14 +1,13 @@
 
-#from tests.Utilities import *
+from pathlib import Path
 from XmlParser import XmlParser
 
 class TestXmlParser():
 
     def setup(self):
-        print("Happy")
-        # goodDataXmlPath = Utilities.get_absolute_path(
-        #     "realDealDataTest/goodData.xml")
-        # self.goodData = XmlParser(goodDataXmlPath)
+        goodDataXmlPath = Path("realDealDataTest/goodData.xml")
+        print(goodDataXmlPath)
+        self.goodData = XmlParser(goodDataXmlPath)
 
         # badDataXmlPath = Utilities.get_absolute_path(
         #     "realDealDataTest/badData.xml")
