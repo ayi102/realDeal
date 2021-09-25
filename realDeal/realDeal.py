@@ -1,6 +1,7 @@
-from XmlParser           import XmlParser
-from Equations.Noi       import Noi
-from pathlib import Path
+from Parser.XmlParser import XmlParser
+from Equations.Noi    import Noi
+from pathlib          import Path
+
 dataXmlPath     = Path("realDealXml/data.xml")
 equationXmlPath = Path("realDealXml/equation.xml")
 
