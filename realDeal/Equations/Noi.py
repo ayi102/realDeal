@@ -1,4 +1,4 @@
-from Equation import Equation
+from Equations.Equation import Equation
 
 class Noi(Equation):
 

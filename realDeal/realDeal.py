@@ -1,6 +1,6 @@
-from XmlParser import XmlParser
-from Noi       import Noi
-from Utilities import *
+from XmlParser     import XmlParser
+from Equations.Noi import Noi
+from Utilities     import *
 
 dataXmlPath     = Utilities.get_absolute_path(
                     "realDealXml/data.xml")
