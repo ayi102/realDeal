@@ -1,5 +1,4 @@
-from test.utilities import *
-from realDeal.Noi import Noi
+from Equations.Noi import Noi
 
 class TestNoi():
 
@@ -25,7 +24,7 @@ class TestNoi():
         self.noi.revenue = 2.0
         assert self.noi.revenue == 2.0
 
-    def test_calculate_when_calucate_is_executed_then_calculate_noi(self):
+    def test_calculate_when_calculate_is_executed_then_calculate_noi(self):
         self.noi.revenue           = 2.0
         self.noi.operatingExpenses = 1.0
         assert self.noi.calculate() == 1.0

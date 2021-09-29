@@ -35,3 +35,12 @@ class XmlParser(Parser):
                 else:
                     raise Exception("XML item attribute does not exist")
         raise Exception("XML item does not exist")
+
+    def getAllItems(self, item, attribute):
+        dict = {}
+        for item in self.root.findall(item):
+            if item.attrib["name"] != None:
+                value = item.find(attribute)
+                if value != None:
+                    dict[item.attrib["name"]] = value.text
+        return dict

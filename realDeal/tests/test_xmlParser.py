@@ -63,3 +63,10 @@ class TestXmlParser():
             self.badEquation.findItemEnabled('equation', 'eq2', 'enabled') == True
         except:
             assert True
+
+    def test_getAllItems_when_items_are_available_then_return_a_list_of_lists_with_all_of_their_attributes(self):
+        expectedItems = {'rentalIncome': '1.00',
+                         'parking'     : '10.00'}
+        items = self.goodData.getAllItems('revenue', 'value')
+
+        assert expectedItems == items
