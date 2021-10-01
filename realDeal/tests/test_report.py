@@ -13,5 +13,4 @@ class TestReport():
         for line in expectedContents:
             self.report.addLine(line)
 
-        self.report.print()
         assert self.report.contents == expectedContents

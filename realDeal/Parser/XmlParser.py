@@ -40,6 +40,7 @@ class XmlParser(Parser):
         dict = {}
         for item in self.root.findall(item):
             if item.attrib["name"] != None:
+                print(item)
                 value = item.find(attribute)
                 if value != None:
                     dict[item.attrib["name"]] = value.text
