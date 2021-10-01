@@ -26,23 +26,23 @@ class XmlParser(Parser):
     def getAllItems(self, item):
         listOfItems = []
         for item in self.root.findall(item):
-            name = item.attrib["name"]
-            if name != None:
-                type = item.find('type')
-                if type != None:
-                    typeText = type.text
-                    value = item.find('value')
-                    if value != None:
-                        valueText = value.text
-                        try:
-                            valueFloat = float(valueText)
-                        except:
-                            raise Exception("XML 'value' property is not a float")
-                        listOfItems.append(XmlItem(name, typeText, valueFloat))
-                    else:
-                        raise Exception("Xml item 'value' property does not exist")
-                else:
-                    raise Exception("Xml item 'type' property does not exist")
-            else:
+            try:
+                name = item.attrib["name"]
+            except:
                 raise Exception("XML item 'name' property does not exist")
+            type = item.find('type')
+            if type != None:
+                typeText = type.text
+                value = item.find('value')
+                if value != None:
+                    valueText = value.text
+                    try:
+                        valueFloat = float(valueText)
+                    except:
+                        raise Exception("XML 'value' property is not a float")
+                    listOfItems.append(XmlItem(name, typeText, valueFloat))
+                else:
+                    raise Exception("Xml item 'value' property does not exist")
+            else:
+                raise Exception("Xml item 'type' property does not exist")
         return listOfItems

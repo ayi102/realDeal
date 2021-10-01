@@ -5,9 +5,13 @@
         <type>rent</type>
     </revenue>
 
-    <revenue name="parking">
+    <noTypeFailure name="parking">
+        <value>1.0</value>
+    </noTypeFailure>
+
+    <noValueFailure name="parking">
         <type>fee</type>
-    </revenue>
+    </noValueFailure>
 
     <operatingExpense name="electricity">
         <type>utility</type>
@@ -20,4 +24,10 @@
     <operatingExpense name="propertyTax">
         <type>taxes</type>
     </operatingExpense>
+
+    <noNameFailure>
+        <type>taxes</type>
+    </noNameFailure>
+
+
 </RealDealData>

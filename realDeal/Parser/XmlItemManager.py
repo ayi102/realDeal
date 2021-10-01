@@ -10,6 +10,10 @@ class XmlItemManager():
         self._items.append(item)
         self._update()
 
+    def appenItems(self, items: list):
+        for item in items:
+            self.appendItem(item)
+
     def getItemsPercentages(self) -> dict:
         percentages = {}
         if self.numOfItems > 0:

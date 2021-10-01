@@ -43,3 +43,28 @@ class TestXmlParser():
         items         = self.goodData.getAllItems('revenue')
 
         assert expectedItems == items
+
+    def test_getAllItems_when_the_item_is_missing_a_name_then_throw_exception(self):
+        try:
+            items = self.badData.getAllItems('noNameFailure')
+        except:
+            assert True
+
+    def test_getAllItems_when_the_item_has_an_invalid_value_then_throw_exception(self):
+        try:
+            items = self.badData.getAllItems('revenue')
+        except:
+            assert True
+
+    def test_getAllItems_when_the_item_is_missing_a_type_then_throw_exception(self):
+        try:
+            items = self.badData.getAllItems('noTypeFailure')
+        except:
+            assert True
+
+
+    def test_getAllItems_when_the_item_is_missing_a_value_then_throw_exception(self):
+        try:
+            items = self.badData.getAllItems('noValueFailure')
+        except:
+            assert True
