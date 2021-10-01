@@ -11,7 +11,7 @@ class TestXmlItemManager():
         itemSum = self.ximRevenue.getItemsSum()
         assert itemSum == 0.00
 
-    def test_getItemsS_when_items_are_added_then_the_sum_is_what_was_add(self):
+    def test_getItemsSum_when_items_are_added_then_the_sum_is_what_was_add(self):
         item = XmlItem('rentalIncome', 'utility', 10.00)
         item2 = XmlItem('ParkingIncome', 'utility', 10.00)
         self.ximRevenue.appendItem(item)
@@ -29,3 +29,14 @@ class TestXmlItemManager():
         itemPercentages = self.ximRevenue.getItemsPercentages()
 
         assert itemPercentages['rentalIncome'] == 100.00
+
+    def test_appendItems_when_Xml_items_are_added_then_the_items_percents_are_updated(self):
+        item  = XmlItem('rentalIncome', 'utility', 10.00)
+        item2 = XmlItem('parking', 'fee', 10.00)
+
+        self.ximRevenue.appendItems([item,item2])
+
+        itemPercentages = self.ximRevenue.getItemsPercentages()
+
+        assert itemPercentages['rentalIncome'] == 50.00
+        assert itemPercentages['parking']      == 50.00
