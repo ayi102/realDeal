@@ -1,3 +1,4 @@
+from realDeal.Parser.XmlItem import XmlItem
 import xml.etree.ElementTree as ET
 from Parser.Parser import Parser
 
@@ -7,20 +8,6 @@ class XmlParser(Parser):
         self.file = file
         # create element tree object
         self.root = ET.parse(self.file).getroot()
-
-    def findItemSum(self, item, itemValue):
-        sum = 0.0
-        for item in self.root.findall(item):
-            value = item.find(itemValue)
-            if value != None:
-                valueText = value.text
-                try:
-                    sum   = sum + float(valueText)
-                except:
-                    raise Exception("XML item is not a float value")
-            else:
-                raise Exception("XML item attribute does not exist")
-        return sum
 
     def findItemEnabled(self, item, itemName, itemEnabled):
         for item in self.root.findall(item):
@@ -36,12 +23,26 @@ class XmlParser(Parser):
                     raise Exception("XML item attribute does not exist")
         raise Exception("XML item does not exist")
 
-    def getAllItems(self, item, attribute):
-        dict = {}
+    def getAllItems(self, item):
+        listOfItems = []
         for item in self.root.findall(item):
-            if item.attrib["name"] != None:
-                print(item)
-                value = item.find(attribute)
-                if value != None:
-                    dict[item.attrib["name"]] = value.text
-        return dict
+            name = item.attrib["name"]
+            if name != None:
+                type = item.find('type')
+                if type != None:
+                    typeText = type.text
+                    value = item.find('value')
+                    if value != None:
+                        valueText = value.text
+                        try:
+                            valueFloat = float(valueText)
+                        except:
+                            raise Exception("XML 'value' property is not a float")
+                        listOfItems.append(XmlItem(name, typeText, valueFloat))
+                    else:
+                        raise Exception("Xml item 'value' property does not exist")
+                else:
+                    raise Exception("Xml item 'type' property does not exist")
+            else:
+                raise Exception("XML item 'name' property does not exist")
+        return listOfItems

@@ -1,6 +1,7 @@
 
-from pathlib import Path
+from pathlib          import Path
 from Parser.XmlParser import XmlParser
+from Parser.XmlItem   import XmlItem
 
 class TestXmlParser():
 
@@ -18,55 +19,27 @@ class TestXmlParser():
         badEquationXmlPath = Path.cwd().joinpath("tests/realDealDataTest/badEquations.xml")
         self.badEquation   = XmlParser(badEquationXmlPath)
 
-    def test_findItemSum_when_there_is_valid_revenue_data_then_sum_is_correct(self):
-        expectedOutput = 11.0
-
-        assert self.goodData.findItemSum('revenue', 'value') == expectedOutput
-
-    def test_findItemSum_when_there_is_valid_operating_expense_data_then_sum_is_correct(self):
-        expectedOutput = 6.0
-
-        assert self.goodData.findItemSum(
-            'operatingExpense', 'value') == expectedOutput
-
-    def test_findItemSum_when_there_is_missing_operating_expense_value_then_exception_thrown(self):
-        expectedOutput = 6.0
-
-        try:
-            self.badData.findItemSum(
-                'operatingExpense', 'value') == expectedOutput
-        except:
-            assert True
-
-    def test_findItemSum_when_there_is_invalid_revenue_value_then_exception_thrown(self):
-        expectedOutput = 6.0
-
-        try:
-            self.badData.findItemSum('revenue', 'value') == expectedOutput
-        except:
-            assert True
-
-    def test_findItemSum_when_there_an_equation_is_enabled_then_detect_it_is(self):
+    def test_findItemEnabled_when_there_an_equation_is_enabled_then_detect_it_is(self):
         assert self.goodEquation.findItemEnabled('equation', 'NOI', 'enabled') == True
 
-    def test_findItemSum_when_there_an_equation_is_enabled_then_detect_it_is(self):
+    def test_findItemEnabled_when_there_an_equation_is_enabled_then_detect_it_is(self):
         assert self.goodEquation.findItemEnabled('equation', 'eq2', 'enabled') == False
 
-    def test_findItemSum_when_there_is_an_invalid_enabled_variable_then_throw_exception(self):
+    def test_findItemEnabled_when_there_is_an_invalid_enabled_variable_then_throw_exception(self):
         try:
             self.badEquation.findItemEnabled('equation', 'NOI', 'enabled') == True
         except:
             assert True
 
-    def test_findItemSum_when_there_is_an_invalid_equation_variable_then_throw_exception(self):
+    def test_findItemEnabled_when_there_is_an_invalid_equation_variable_then_throw_exception(self):
         try:
             self.badEquation.findItemEnabled('equation', 'eq2', 'enabled') == True
         except:
             assert True
 
     def test_getAllItems_when_items_are_available_then_return_a_list_of_lists_with_all_of_their_attributes(self):
-        expectedItems = {'rentalIncome': '1.00',
-                         'parking'     : '10.00'}
-        items = self.goodData.getAllItems('revenue', 'value')
+        expectedItems = [XmlItem('rentalIncome', 'rent', 1.00),
+                         XmlItem('parking', 'fee', 10.00)]
+        items         = self.goodData.getAllItems('revenue')
 
         assert expectedItems == items
