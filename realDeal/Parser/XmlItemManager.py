@@ -19,14 +19,19 @@ class XmlItemManager():
         if self.numOfItems > 0:
             for item in self._items:
                 percentages[item.name] = item.percent
-        
         return percentages
+
+    def getItemsTypePercentages(self) -> dict:
+        typePercentages = {}
+        if self.numOfItems > 0:
+            for item in self._items:
+                typePercentages[item.name] = item.typePercent
+        return typePercentages
 
     def getItemsSum(self) -> float:
         sum = 0.00
         for item in self._items:
             sum = sum + item.value
-        
         return sum
 
     @property
@@ -40,17 +45,15 @@ class XmlItemManager():
         for item in self._items:
             sum = sum + item.value
 
-        # Iterate through items to find what other items have the same type
-        # Generate a sum based on the total items 
-        for currItem in self._items:
+        # Calculate the percentage for each item
+        for item in self._items:
+            item.percent = (item.value / sum) * 100.00
 
-            # Start with a sum that is - the current items value, since we will add it to the sum
-            # when we iterate through the list looking for items with the same type
-            typeSum = -1 * currItem.value
+        # Iterate through items to find what other items have the same type
+        # Generate a sum based on the total items of that type
+        for currItem in self._items:
+            typeSum = 0.0
             for testItem in self._items:
                 if currItem.type == testItem.type:
                     typeSum = typeSum + testItem.value
-                    
-
-        for item in self._items:
-            item.percent = (item.value / sum) * 100.00
+            currItem.typePercent = (currItem.value/typeSum) * 100.00

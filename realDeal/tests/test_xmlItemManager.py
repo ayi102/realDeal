@@ -30,13 +30,16 @@ class TestXmlItemManager():
 
         assert itemPercentages['rentalIncome'] == 100.00
 
-    def test_appendItems_when_Xml_items_are_added_then_the_items_percents_are_updated(self):
-        item  = XmlItem('rentalIncome', 'utility', 10.00)
-        item2 = XmlItem('parking', 'fee', 10.00)
+    def test_appendItems_when_Xml_items_are_added_then_the_items_percents_and_items_type_percents_are_updated(self):
+        item  = XmlItem('rentalIncome', 'utility', 20.00)
+        item2 = XmlItem('parking', 'utility', 20.00)
+        item3 = XmlItem('test', 'fee', 10.00)
 
-        self.ximRevenue.appendItems([item,item2])
+        self.ximRevenue.appendItems([item,item2, item3])
 
-        itemPercentages = self.ximRevenue.getItemsPercentages()
+        itemPercentages     = self.ximRevenue.getItemsPercentages()
+        itemTypePercentages = self.ximRevenue.getItemsTypePercentages()
 
-        assert itemPercentages['rentalIncome'] == 50.00
-        assert itemPercentages['parking']      == 50.00
+        assert itemPercentages['rentalIncome'] == 40.00
+        assert itemPercentages['parking']      == 40.00
+        assert itemTypePercentages['rentalIncome'] == 50.00
