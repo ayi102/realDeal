@@ -43,3 +43,13 @@ class TestXmlItemManager():
         assert itemPercentages['rentalIncome'] == 40.00
         assert itemPercentages['parking']      == 40.00
         assert itemTypePercentages['rentalIncome'] == 50.00
+
+    def test_getAllPrintableData_when_invoked_then_a_list_strings_is_returned(self):
+        item  = XmlItem('Rental Income', 'Utility', 20.00)
+        item2 = XmlItem('Parking', 'Utility', 20.00)
+        item3 = XmlItem('Test', 'Fee', 10.00)
+
+        expectedList = ['Header', 'revenue', 'Type', 'Utility', 'Item', 'Rental Income,20.0,50.0,40.0', 'Item', 'Parking,20.0,50.0,40.0', 'Type', 'Fee', 'Item', 'Test,10.0,100.0,20.0']
+
+        self.ximRevenue.appendItems([item,item2, item3])
+        assert expectedList == self.ximRevenue.getAllPrintableData()

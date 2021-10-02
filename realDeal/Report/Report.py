@@ -1,14 +1,35 @@
+import os
 
 class Report():
 
-    def __init__(self, title):
-        self.title   = title
+    def __init__(self, title, fileName):
+        self.title    = title
+        self.fileName = fileName
         self.contents = []
 
-    def addLine(self, line):
-        self.contents.append(line)
+    def addContent(self, lines):
+        lineToAdd = ""
+        for line in lines:
+            if line == "Header":
+                lineToAdd = "# "
+            elif line == "Type":
+                lineToAdd = "## "
+            elif line == "Item":
+                lineToAdd = ""
+            else:
+                lineToAdd = lineToAdd + line
+                self.contents.append(lineToAdd)
+                lineToAdd = ""
 
-    def print(self):
-        print(self.title)
+    def generateMd(self):
+        try:
+            os.remove(self.fileName)
+        except:
+            pass
+
+        fd = open(self.fileName, 'w+')
+
         for line in self.contents:
-            print(line)
+            fd.write(line + "\n\n")
+
+        fd.close()
