@@ -1,4 +1,4 @@
-from realDeal.Parser.XmlItem import XmlItem
+from Parser.XmlItem import XmlItem
 import xml.etree.ElementTree as ET
 from Parser.Parser import Parser
 

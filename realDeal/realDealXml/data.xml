@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <RealDealData>
-    <revenue name="rentalIncome">
-        <value>1.0</value>
+    <income name="rentalIncome">
+        <value>1.00</value>
         <type>rent</type>
-    </revenue>
+    </income>
 
-    <revenue name="parking">
-        <value>10.0</value>
+    <income name="parking">
+        <value>10.00</value>
         <type>fee</type>
-    </revenue>
+    </income>
 
     <operatingExpense name="electricity">
-        <value>1.0</value>
+        <value>1.00</value>
         <type>utility</type>
     </operatingExpense>
 
     <operatingExpense name="water">
-        <value>2.0</value>
+        <value>2.00</value>
         <type>utility</type>
     </operatingExpense>
 
     <operatingExpense name="propertyTax">
-        <value>3.0</value>
+        <value>3.00</value>
         <type>taxes</type>
     </operatingExpense>
 </RealDealData>
