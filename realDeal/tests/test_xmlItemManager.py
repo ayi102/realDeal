@@ -44,12 +44,28 @@ class TestXmlItemManager():
         assert itemPercentages['parking']      == 40.00
         assert itemTypePercentages['rentalIncome'] == 50.00
 
-    def test_getAllPrintableData_when_invoked_then_a_list_strings_is_returned(self):
+    def test_getTypes_when_invoked_then_a_list_of_types_is_returned(self):
         item  = XmlItem('Rental Income', 'Utility', 20.00)
         item2 = XmlItem('Parking', 'Utility', 20.00)
         item3 = XmlItem('Test', 'Fee', 10.00)
 
-        expectedList = ['Header', 'revenue', 'Type', 'Utility', 'Item', 'Rental Income,20.0,50.0,40.0', 'Item', 'Parking,20.0,50.0,40.0', 'Type', 'Fee', 'Item', 'Test,10.0,100.0,20.0']
+        expectedList = ['Utility', 'Fee']
 
         self.ximRevenue.appendItems([item,item2, item3])
-        assert expectedList == self.ximRevenue.getAllPrintableData()
+        assert expectedList == self.ximRevenue.getTypes()
+
+    def test_getItems_when_invoked_then_a_list_items_is_returned(self):
+        item  = XmlItem('Rental Income', 'Utility', 20.00)
+        item2 = XmlItem('Parking', 'Utility', 20.00)
+        item3 = XmlItem('Test', 'Fee', 10.00)
+        self.ximRevenue.appendItems([item,item2, item3])
+
+        expectedLists = [['Rental Income,20.0,50.0,40.0', 'Parking,20.0,50.0,40.0'], ['Test,10.0,100.0,20.0']]
+
+        types = self.ximRevenue.getTypes()
+
+        measureList = []
+        for type in types:
+            measureList.append(self.ximRevenue.getItems(type))
+
+        assert expectedLists == measureList

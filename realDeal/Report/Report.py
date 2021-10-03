@@ -7,19 +7,23 @@ class Report():
         self.fileName = fileName
         self.contents = []
 
-    def addContent(self, lines):
-        lineToAdd = ""
-        for line in lines:
-            if line == "Header":
-                lineToAdd = "# "
-            elif line == "Type":
-                lineToAdd = "## "
-            elif line == "Item":
-                lineToAdd = ""
-            else:
-                lineToAdd = lineToAdd + line
-                self.contents.append(lineToAdd)
-                lineToAdd = ""
+    def addContent(self, type, line):
+        if  type == "Header":
+            self._parseHeader(line)
+        elif type == "Type":
+            self._parseType(line)
+        elif type == "Item":
+            self._parseItem
+
+    def _parseHeader(self, line):
+        self.contents.append("## " + line)
+
+    def _parseType(self, line):
+        self.contents.append("### " + line)
+
+    def _parseItem(self, itemLine):
+        itemLine.split(',')
+        print(itemLine)
 
     def generateMd(self):
         try:

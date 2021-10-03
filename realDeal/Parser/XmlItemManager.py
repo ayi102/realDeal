@@ -34,13 +34,9 @@ class XmlItemManager():
             sum = sum + item.value
         return sum
 
-    def getAllPrintableData(self):
-        lines          = []
-        typesDisplayed = {}
-
-        # Get the name of category of items
-        lines.append("Header")
-        lines.append(self._name)
+    def getTypes(self) -> list:
+        types     = []
+        typeFound = {}
 
         # List each item by type
         for itemType in self._items:
@@ -49,19 +45,27 @@ class XmlItemManager():
             # Check if the item type has already been checked
             # If not, we can search for the list of this specific item type
             # Then add it to typesDisplayed dictionary when we are done
-            if itemTypeSearch not in typesDisplayed:
-                lines.append("Type")
-                lines.append(itemTypeSearch)
-                for item in self._items:
-                    if item.type == itemTypeSearch:
-                        lines.append("Item")
-                        lines.append(item.name + "," + str(item.value) + "," + str(item.typePercent) + "," + str(item.percent))
-                typesDisplayed[itemTypeSearch] = "Done"
-        return lines
+            if itemTypeSearch not in typeFound:
+                types.append(itemTypeSearch)
+                typeFound[itemTypeSearch] = "Done"
+        return types
+
+    def getItems(self, type: str) -> str:
+        items = []
+
+        # List each item by type
+        for item in self._items:
+            if item.type == type:
+                items.append(item.name + "," + str(item.value) + "," + str(item.typePercent) + "," + str(item.percent))
+        return items
 
     @property
     def numOfItems(self):
         return len(self._items)
+
+    @property
+    def name(self):
+        return self._name
 
     def _update(self):
         sum     = 0.0
