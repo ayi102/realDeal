@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <RealDealData>
-    <income name="rentalIncome">
-        <value>1.00</value>
+    <income name="Rental Income">
+        <value>1742.39</value>
         <type>rent</type>
-    </income>
-
-    <income name="parking">
-        <value>10.00</value>
-        <type>fee</type>
     </income>
 
     <operatingExpense name="electricity">
@@ -20,8 +15,33 @@
         <type>utility</type>
     </operatingExpense>
 
-    <operatingExpense name="propertyTax">
-        <value>3.00</value>
+    <operatingExpense name="Lawn Care">
+        <value>960</value>
+        <type>utility</type>
+    </operatingExpense>
+
+    <operatingExpense name="Lawn Cut">
+        <value>960</value>
+        <type>utility</type>
+    </operatingExpense>
+
+    <operatingExpense name="Pest Control">
+        <value>960</value>
+        <type>utility</type>
+    </operatingExpense>
+
+    <operatingExpense name="Termite Insurance">
+        <value>960</value>
+        <type>utility</type>
+    </operatingExpense>
+
+    <operatingExpense name="Flood Insurance">
+        <value>960</value>
+        <type>utility</type>
+    </operatingExpense>
+
+    <operatingExpense name="Property Tax">
+        <value>5328.00</value>
         <type>taxes</type>
     </operatingExpense>
 </RealDealData>
