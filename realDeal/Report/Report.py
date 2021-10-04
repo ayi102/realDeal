@@ -11,16 +11,12 @@ class Report():
         if  type == "Header":
             self._parseHeader(line)
         elif type == "Type":
-            self._parseType(line)
             self._startTable(line)
         elif type == "Item":
             self._parseItem(line)
 
     def _parseHeader(self, line):
         self.contents.append("## " + line)
-
-    def _parseType(self, line):
-        self.contents.append("### " + line)
 
     def _parseItem(self, itemLine):
         mdString = '|'
@@ -30,6 +26,7 @@ class Report():
         self.contents.append(mdString)
 
     def _startTable(self,type):
+        self.contents.append('\n')
         self.contents.append('|' + type + '| Value ($)| Type Percentage (%) | Total Percentage (%)|')
         self.contents.append('|--|--|--|--|')
 
@@ -41,6 +38,7 @@ class Report():
 
         fd = open(self.fileName, 'w+')
 
+        fd.write('# ' + self.title + '\n')
         for line in self.contents:
             fd.write(line + "\n")
 
