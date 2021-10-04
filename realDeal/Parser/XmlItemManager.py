@@ -56,7 +56,7 @@ class XmlItemManager():
         # List each item by type
         for item in self._items:
             if item.type == type:
-                items.append(item.name + "," + str(item.value) + "," + str(item.typePercent) + "," + str(item.percent))
+                items.append(item.name + "," + str(round(item.value,2)) + "," + str(round(item.typePercent,2)) + "," + str(round(item.percent, 2)))
         return items
 
     @property
