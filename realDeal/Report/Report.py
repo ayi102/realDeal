@@ -11,12 +11,14 @@ class Report():
         if  type == "Header":
             self._parseHeader(line)
         elif type == "Type":
-            self._startTable(line)
+            self._parseType(line)
         elif type == "Item":
             self._parseItem(line)
 
     def _parseHeader(self, line):
         self.contents.append("## " + line)
+        self.contents.append('|Category| Value ($)| Type Percentage (%) | Total Percentage (%)|')
+        self.contents.append('|--|--|--|--|')
 
     def _parseItem(self, itemLine):
         mdString = '|'
@@ -25,10 +27,8 @@ class Report():
             mdString = mdString + item + '|'
         self.contents.append(mdString)
 
-    def _startTable(self,type):
-        self.contents.append('\n')
-        self.contents.append('|' + type + '| Value ($)| Type Percentage (%) | Total Percentage (%)|')
-        self.contents.append('|--|--|--|--|')
+    def _parseType(self,type):
+        self.contents.append('|**' + type + '**| | | |')
 
     def generateMd(self):
         try:
