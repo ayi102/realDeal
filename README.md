@@ -52,4 +52,4 @@ The data.xml are all variables required by the equations. This can include reven
     ```
 
 ## Automated Unit Tests
-Automated unit test are executed using Pytest. 
+Automated unit test are executed using Pytest. To execute the automated unit tests, exu
