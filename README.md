@@ -27,12 +27,12 @@ The data.xml are all variables required by the equations. This can include reven
 ### Outputs
 
 ## Required Dependencies
-- Python 3.9 or Greater
+- Python 3.10
 - Pip
 - Pipenv
 
 ### Setup
-1. Install Python 3.9 or Greater
+1. Install Python 3.10
     - (Ensure Python is added to you PATH)
     - This version is required for pipenv
     - Pip should be installed by default
@@ -52,4 +52,4 @@ The data.xml are all variables required by the equations. This can include reven
     ```
 
 ## Automated Unit Tests
-Automated unit test are executed using Pytest. 
+Automated unit test are executed using Pytest. To execute the automated unit tests, exu
