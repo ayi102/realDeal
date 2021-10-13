@@ -39,5 +39,9 @@ class Noi(Equation):
     def calculate(self):
         return (self._revenue - self._operatingExpenses)
 
-    def print(self):
-        return "pass"
+    def getCalcString(self):
+
+        # TODO: THIS NEEDS TO GENERATE A PARSABLE STRING!!
+        return [("Real Estate Revenue" , str(self.revenue)),
+                ("Operating Expenses", str(self.operatingExpenses)),
+                ("Net Operating Income", str(self.calculate()))]

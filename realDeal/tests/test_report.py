@@ -1,20 +1,24 @@
-from Report.Report import Report
+from Report.Report         import Report
 from Parser.XmlItem        import XmlItem
 from Parser.XmlItemManager import XmlItemManager
+from Equations.Noi         import Noi
 
 class TestReport():
 
     def setup(self):
         self.report = Report("Financial Report", "test.md")
+        self.noi    = Noi("Net Operating Income")
 
     def test_generateMd_when_invoked_then_file_is_generated_with_content(self):
-        content    = ['Header', 'Revenue', 'Type', 'Utility', 'Item', 'Rental Income 20.0 50.0 40.0', 'Item', 'Parking 20.0 50.0 40.0', 'Type', 'Fee', 'Item', 'Test 10.0 100.0 20.0']
-        ximRevenue = XmlItemManager("Income")
-        item  = XmlItem('Rental Income', 'Utility', 20.00)
-        item2 = XmlItem('Parking', 'Utility', 20.00)
-        item3 = XmlItem('Test', 'Fee', 10.00)
 
-        ximRevenue.appendItems([item,item2, item3])
+        ximRevenue        = XmlItemManager("Income")
+        operatingExpenses = XmlItemManager("Operating Expenses")
+        rev1       = XmlItem('Rental Income', 'Utility', 20.00)
+        rev2       = XmlItem('Parking', 'Utility', 20.00)
+        oe1        = XmlItem('Test', 'Fee', 10.00)
+
+        ximRevenue.appendItems([rev1,rev2])
+        operatingExpenses.appendItem(oe1)
 
         self.report.addContent("Header", ximRevenue.name)
         types = ximRevenue.getTypes()
@@ -23,4 +27,18 @@ class TestReport():
             self.report.addContent("Type", type)
             for item in items:
                 self.report.addContent("Item", item)
+
+        self.report.addContent("Header", operatingExpenses.name)
+        expenses = operatingExpenses.getTypes()
+        for expense in expenses:
+            items = operatingExpenses.getItems(expense)
+            self.report.addContent("Type", expense)
+            for item in items:
+                self.report.addContent("Item", item)
+
+        self.noi.revenue           = ximRevenue.getItemsSum()
+        self.noi.operatingExpenses = operatingExpenses.getItemsSum()
+        self.report.addContent("Equation", self.noi.name)
+        self.report.addContent("Calculation", self.noi.getCalcString())
+        
         self.report.generateMd()

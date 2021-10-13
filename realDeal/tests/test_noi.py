@@ -28,3 +28,11 @@ class TestNoi():
         self.noi.revenue           = 2.0
         self.noi.operatingExpenses = 1.0
         assert self.noi.calculate() == 1.0
+
+    def test_getCalcString_when_string_is_requested_then_the_correct_string_is_returned(self):
+        self.noi.revenue           = 2.0
+        self.noi.operatingExpenses = 1.0
+
+        assert self.noi.getCalcString() ==[("Real Estate Revenue", "2.0"),
+                                            ("Operating Expenses","1.0"),
+                                            ("Net Operating Income","1.0")]

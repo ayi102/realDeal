@@ -25,3 +25,7 @@ class Equation(ABC):
     @abstractmethod
     def calculate(self):
         pass
+
+    @abstractmethod
+    def getCalcString(self):
+        pass
