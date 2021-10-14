@@ -27,7 +27,7 @@ The data.xml are all variables required by the equations. This can include reven
 ### Outputs
 
 ## Required Dependencies
-- Python 3.10
+- Python 3.9
 - Pip
 - Pipenv
 

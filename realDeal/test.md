@@ -10,3 +10,9 @@
 |--|--|--|--|
 |**Fee**| | | |
 |Test|10.0|100.0|100.0|
+## Net Operating Income
+|Variable| Value ($) |
+|--|--|
+|Real Estate Revenue|40.0|
+|Operating Expenses|10.0|
+|**Net Operating Income**|30.0|

@@ -40,8 +40,6 @@ class Noi(Equation):
         return (self._revenue - self._operatingExpenses)
 
     def getCalcString(self):
-
-        # TODO: THIS NEEDS TO GENERATE A PARSABLE STRING!!
-        return [("Real Estate Revenue" , str(self.revenue)),
-                ("Operating Expenses", str(self.operatingExpenses)),
-                ("Net Operating Income", str(self.calculate()))]
+        return ["Real Estate Revenue,"  + str(self.revenue),
+                "Operating Expenses,"   + str(self.operatingExpenses),
+                "**Net Operating Income**," + str(self.calculate())]

@@ -39,6 +39,9 @@ class TestReport():
         self.noi.revenue           = ximRevenue.getItemsSum()
         self.noi.operatingExpenses = operatingExpenses.getItemsSum()
         self.report.addContent("Equation", self.noi.name)
-        self.report.addContent("Calculation", self.noi.getCalcString())
-        
+        calculations = self.noi.getCalcString()
+
+        for calculation in calculations:
+            self.report.addContent("Item", calculation)
+
         self.report.generateMd()
