@@ -1,47 +1,67 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <RealDealData>
     <income name="Rental Income">
-        <value>1742.39</value>
+        <value>25000.00</value>
         <type>rent</type>
     </income>
 
+    <operatingExpense name="Mortgage">
+        <value>20908.68</value>
+        <type>Mortgage</type>
+    </operatingExpense>
+
     <operatingExpense name="electricity">
-        <value>1.00</value>
-        <type>utility</type>
+        <value>1354.26</value>
+        <type>Utilities</type>
+    </operatingExpense>
+
+    <operatingExpense name="gas">
+        <value>659.18</value>
+        <type>Utilities</type>
     </operatingExpense>
 
     <operatingExpense name="water">
-        <value>2.00</value>
-        <type>utility</type>
+        <value>1855.71</value>
+        <type>Utilities</type>
+    </operatingExpense>
+
+    <operatingExpense name="Trash">
+        <value>302.76</value>
+        <type>Utilities</type>
     </operatingExpense>
 
     <operatingExpense name="Lawn Care">
-        <value>960</value>
-        <type>utility</type>
+        <value>540.00</value>
+        <type>Utilities</type>
     </operatingExpense>
 
     <operatingExpense name="Lawn Cut">
-        <value>960</value>
-        <type>utility</type>
+        <value>960.00</value>
+        <type>Utilities</type>
     </operatingExpense>
 
     <operatingExpense name="Pest Control">
-        <value>960</value>
-        <type>utility</type>
+        <value>234.00</value>
+        <type>Utilities</type>
     </operatingExpense>
 
     <operatingExpense name="Termite Insurance">
-        <value>960</value>
-        <type>utility</type>
+        <value>270.00</value>
+        <type>Utilities</type>
+    </operatingExpense>
+
+    <operatingExpense name="Home Owners Insurance">
+        <value>955.00</value>
+        <type>Insurance</type>
     </operatingExpense>
 
     <operatingExpense name="Flood Insurance">
-        <value>960</value>
-        <type>utility</type>
+        <value>572.00</value>
+        <type>Insurance</type>
     </operatingExpense>
 
     <operatingExpense name="Property Tax">
         <value>5328.00</value>
-        <type>taxes</type>
+        <type>Taxes</type>
     </operatingExpense>
 </RealDealData>

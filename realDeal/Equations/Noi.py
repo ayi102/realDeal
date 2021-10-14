@@ -37,7 +37,7 @@ class Noi(Equation):
         self._revenue = val
 
     def calculate(self):
-        return (self._revenue - self._operatingExpenses)
+        return round((self._revenue - self._operatingExpenses),2)
 
     def getCalcString(self):
         return ["Real Estate Revenue,"  + str(self.revenue),

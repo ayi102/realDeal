@@ -40,8 +40,10 @@ for  im in itemManagers:
 # Calculate equations
 for equation in equations:
     if equation.isEnabled:
-        print(equation.calculate())
-    else:
-        print(equation.name + " is disabled")
+        report.addContent("Equation", equation.name)
+        calculations = equation.getCalcString()
+
+        for calculation in calculations:
+            report.addContent("Item", calculation)
 
 report.generateMd()
