@@ -18,7 +18,7 @@ operatingExpenseItems.appendItems(dataXml.getAllItems('operatingExpense'))
 
 itemManagers = [incomeItems, operatingExpenseItems]
 
-noi = Noi("Noi")
+noi = Noi("Net Operating Income")
 noi.operatingExpenses = operatingExpenseItems.getItemsSum()
 noi.revenue           = incomeItems.getItemsSum()
 noi.isEnabled         = equationsXml.findItemEnabled('equation', 'Noi', 'enabled')

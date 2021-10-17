@@ -23,7 +23,7 @@
 |Flood Insurance|572.0|37.46|1.69|
 |**Taxes**| | | |
 |Property Tax|5328.0|100.0|15.7|
-## Noi
+## Net Operating Income
 |Variable| Value ($) |
 |--|--|
 |Real Estate Revenue|25000.0|
