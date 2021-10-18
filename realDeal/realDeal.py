@@ -1,6 +1,7 @@
 from Parser.XmlParser      import XmlParser
 from Parser.XmlItemManager import XmlItemManager
 from Equations.Noi         import Noi
+from Equations.Mortgage    import Mortgage
 from pathlib               import Path
 from Report.Report         import Report
 

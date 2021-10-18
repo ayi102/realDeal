@@ -5,6 +5,26 @@
         <type>rent</type>
     </income>
 
+    <mortage name="Loan Amount">
+        <value>100000.00</value>
+        <type>loan</type>
+    </mortage>
+
+    <mortage name="Down Payment">
+        <value>20000.00</value>
+        <type>payment</type>
+    </mortage>
+
+    <mortage name="Loan Term">
+        <value>30</value>
+        <type>Term</type>
+    </mortage>
+
+    <mortage name="Interest Rate">
+        <value>3.0</value>
+        <type>rate</type>
+    </mortage>
+
     <operatingExpense name="Mortgage">
         <value>20908.68</value>
         <type>Mortgage</type>
