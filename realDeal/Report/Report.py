@@ -34,7 +34,7 @@ class Report():
 
     def _parseEquation(self, line):
         self.contents.append("## " + line)
-        self.contents.append('|Variable| Value ($) |')
+        self.contents.append('|Variable| Value |')
         self.contents.append('|--|--|')
 
     def generateMd(self):

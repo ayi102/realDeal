@@ -40,6 +40,6 @@ class Noi(Equation):
         return round((self._revenue - self._operatingExpenses),2)
 
     def getCalcString(self):
-        return ["Real Estate Revenue,"  + str(self.revenue),
-                "Operating Expenses,"   + str(self.operatingExpenses),
-                "**Net Operating Income**," + str(self.calculate())]
+        return ["Real Estate Revenue ($),"  + str(self.revenue),
+                "Operating Expenses ($),"   + str(self.operatingExpenses),
+                "**Net Operating Income ($)**," + str(self.calculate())]
