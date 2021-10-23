@@ -11,13 +11,16 @@ equationXmlPath = Path("realDealXml/equation.xml")
 dataXml      = XmlParser(dataXmlPath)
 equationsXml = XmlParser(equationXmlPath)
 
-incomeItems  = XmlItemManager("Income")
+incomeItems  = XmlItemManager("Income", False)
 incomeItems.appendItems(dataXml.getAllItems('income'))
 
-operatingExpenseItems = XmlItemManager("Operating Expenses")
+operatingExpenseItems = XmlItemManager("Operating Expenses", False)
 operatingExpenseItems.appendItems(dataXml.getAllItems('operatingExpense'))
 
-itemManagers = [incomeItems, operatingExpenseItems]
+mortgageItems = XmlItemManager("Mortgage", True)
+mortgageItems.appendItems(dataXml.getAllItems("mortgage"))
+
+itemManagers = [incomeItems, operatingExpenseItems, mortgageItems]
 
 noi = Noi("Net Operating Income")
 noi.operatingExpenses = operatingExpenseItems.getItemsSum()

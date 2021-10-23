@@ -4,8 +4,9 @@ from Parser.XmlItemManager import XmlItemManager
 class TestXmlItemManager():
 
     def setup(self):
-        self.ximRevenue           = XmlItemManager("revenue")
-        self.ximOperatingExpenses = XmlItemManager("operatingExpense")
+        self.ximRevenue           = XmlItemManager("revenue", False)
+        self.ximOperatingExpenses = XmlItemManager("operatingExpense", False)
+        self.ximMortgage          = XmlItemManager("mortgage", True)
 
     def test_getItemsS_when_no_item_is_added_then_the_sum_is_0(self):
         itemSum = self.ximRevenue.getItemsSum()
@@ -43,6 +44,20 @@ class TestXmlItemManager():
         assert itemPercentages['rentalIncome'] == 40.00
         assert itemPercentages['parking']      == 40.00
         assert itemTypePercentages['rentalIncome'] == 50.00
+
+    def test_appendItems_when_Xml_items_are_added_and_set_to_be_ignored_then_the_items_percents_and_items_type_percents_are_100(self):
+        item  = XmlItem('rate', 'utility', 20.00)
+        item2 = XmlItem('payment', 'utility', 20.00)
+        item3 = XmlItem('test', 'fee', 10.00)
+
+        self.ximMortgage.appendItems([item,item2, item3])
+
+        itemPercentages     = self.ximMortgage.getItemsPercentages()
+        itemTypePercentages = self.ximMortgage.getItemsTypePercentages()
+
+        assert itemPercentages['rate'] == 100.00
+        assert itemPercentages['payment']      == 100.00
+        assert itemTypePercentages['test'] == 100.00
 
     def test_getTypes_when_invoked_then_a_list_of_types_is_returned(self):
         item  = XmlItem('Rental Income', 'Utility', 20.00)

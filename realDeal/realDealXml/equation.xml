@@ -3,4 +3,7 @@
     <equation name="Noi">
         <enabled>True</enabled>
     </equation>
+    <equation name="Mortgage">
+        <enabled>True</enabled>
+    </equation>
 </RealDealEquations>

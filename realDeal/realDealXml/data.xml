@@ -2,30 +2,30 @@
 <RealDealData>
     <income name="Rental Income">
         <value>25000.00</value>
-        <type>rent</type>
+        <type>Rent</type>
     </income>
 
-    <mortage name="Loan Amount">
+    <mortgage name="Loan Amount">
         <value>100000.00</value>
-        <type>loan</type>
-    </mortage>
+        <type>Loan</type>
+    </mortgage>
 
-    <mortage name="Down Payment">
+    <mortgage name="Down Payment">
         <value>20000.00</value>
-        <type>payment</type>
-    </mortage>
+        <type>Payment</type>
+    </mortgage>
 
-    <mortage name="Loan Term">
+    <mortgage name="Loan Term">
         <value>30</value>
         <type>Term</type>
-    </mortage>
+    </mortgage>
 
-    <mortage name="Interest Rate">
+    <mortgage name="Interest Rate">
         <value>3.0</value>
-        <type>rate</type>
-    </mortage>
+        <type>Rate</type>
+    </mortgage>
 
-    <operatingExpense name="Mortgage">
+    <operatingExpense name="mortgage">
         <value>20908.68</value>
         <type>Mortgage</type>
     </operatingExpense>
@@ -50,37 +50,37 @@
         <type>Utilities</type>
     </operatingExpense>
 
-    <operatingExpense name="Lawn Care">
+    <operatingExpense name="lawn care">
         <value>540.00</value>
         <type>Utilities</type>
     </operatingExpense>
 
-    <operatingExpense name="Lawn Cut">
+    <operatingExpense name="lawn cut">
         <value>960.00</value>
         <type>Utilities</type>
     </operatingExpense>
 
-    <operatingExpense name="Pest Control">
+    <operatingExpense name="pest control">
         <value>234.00</value>
         <type>Utilities</type>
     </operatingExpense>
 
-    <operatingExpense name="Termite Insurance">
+    <operatingExpense name="termite insurance">
         <value>270.00</value>
         <type>Utilities</type>
     </operatingExpense>
 
-    <operatingExpense name="Home Owners Insurance">
+    <operatingExpense name="home owners insurance">
         <value>955.00</value>
         <type>Insurance</type>
     </operatingExpense>
 
-    <operatingExpense name="Flood Insurance">
+    <operatingExpense name="flood insurance">
         <value>572.00</value>
         <type>Insurance</type>
     </operatingExpense>
 
-    <operatingExpense name="Property Tax">
+    <operatingExpense name="property tax">
         <value>5328.00</value>
         <type>Taxes</type>
     </operatingExpense>

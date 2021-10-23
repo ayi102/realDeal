@@ -2,9 +2,10 @@ from Parser.XmlItem import XmlItem
 
 class XmlItemManager():
 
-    def __init__(self, name):
+    def __init__(self, name, ignore):
         self._name    = name
         self._items   = []
+        self._ignore  = ignore
 
     def appendItem(self, item: XmlItem):
         self._items.append(item)
@@ -70,19 +71,21 @@ class XmlItemManager():
     def _update(self):
         sum     = 0.0
 
-        # Iterate through items to find the total sum
-        for item in self._items:
-            sum = sum + item.value
+        # No need to determine items sum if this manager is going to ignore it
+        if self._ignore == False:
+            # Iterate through items to find the total sum
+            for item in self._items:
+                sum = sum + item.value
 
-        # Calculate the percentage for each item
-        for item in self._items:
-            item.percent = (item.value / sum) * 100.00
+            # Calculate the percentage for each item
+            for item in self._items:
+                item.percent = (item.value / sum) * 100.00
 
-        # Iterate through items to find what other items have the same type
-        # Generate a sum based on the total items of that type
-        for currItem in self._items:
-            typeSum = 0.0
-            for testItem in self._items:
-                if currItem.type == testItem.type:
-                    typeSum = typeSum + testItem.value
-            currItem.typePercent = (currItem.value/typeSum) * 100.00
+            # Iterate through items to find what other items have the same type
+            # Generate a sum based on the total items of that type
+            for currItem in self._items:
+                typeSum = 0.0
+                for testItem in self._items:
+                    if currItem.type == testItem.type:
+                        typeSum = typeSum + testItem.value
+                currItem.typePercent = (currItem.value/typeSum) * 100.00
