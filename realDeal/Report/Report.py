@@ -19,7 +19,7 @@ class Report():
 
     def _parseHeader(self, line):
         self.contents.append("## " + line)
-        self.contents.append('|Category| Value ($)| Type Percentage (%) | Total Percentage (%)|')
+        self.contents.append('|Category| Value | Type Percentage (%) | Total Percentage (%)|')
         self.contents.append('|--|--|--|--|')
 
     def _parseItem(self, itemLine):

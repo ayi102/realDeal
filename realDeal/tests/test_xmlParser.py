@@ -38,8 +38,8 @@ class TestXmlParser():
             assert True
 
     def test_getAllItems_when_items_are_available_then_return_a_list_of_lists_with_all_of_their_attributes(self):
-        expectedItems = [XmlItem('rentalIncome', 'rent', 1.00),
-                         XmlItem('parking', 'fee', 10.00)]
+        expectedItems = [XmlItem('rentalIncome', 'rent', 1.00, '$'),
+                         XmlItem('parking', 'fee', 10.00, '$')]
         items         = self.goodData.getAllItems('revenue')
 
         assert expectedItems == items

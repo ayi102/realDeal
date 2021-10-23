@@ -33,6 +33,6 @@ class TestNoi():
         self.noi.revenue           = 2.0
         self.noi.operatingExpenses = 1.0
 
-        assert self.noi.getCalcString() ==[("Real Estate Revenue ($)", "2.0"),
-                                            ("Operating Expenses ($)","1.0"),
-                                            ("Net Operating Income ($)","1.0")]
+        assert self.noi.getCalcString() ==[("Real Estate Revenue,$2.0"),
+                                            ("Operating Expenses,$1.0"),
+                                            ("**Net Operating Income**,$1.0")]

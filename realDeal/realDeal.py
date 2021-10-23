@@ -17,7 +17,7 @@ incomeItems.appendItems(dataXml.getAllItems('income'))
 operatingExpenseItems = XmlItemManager("Operating Expenses", False)
 operatingExpenseItems.appendItems(dataXml.getAllItems('operatingExpense'))
 
-mortgageItems = XmlItemManager("Mortgage", True)
+mortgageItems = XmlItemManager("Mortgage Items", True)
 mortgageItems.appendItems(dataXml.getAllItems("mortgage"))
 
 itemManagers = [incomeItems, operatingExpenseItems, mortgageItems]

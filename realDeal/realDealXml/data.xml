@@ -3,85 +3,102 @@
     <income name="Rental Income">
         <value>25000.00</value>
         <type>Rent</type>
+        <unit>$</unit>
     </income>
 
     <mortgage name="Loan Amount">
         <value>100000.00</value>
         <type>Loan</type>
+        <unit>$</unit>
     </mortgage>
 
     <mortgage name="Down Payment">
         <value>20000.00</value>
         <type>Payment</type>
+        <unit>$</unit>
     </mortgage>
 
     <mortgage name="Loan Term">
         <value>30</value>
         <type>Term</type>
+        <unit>Yrs</unit>
     </mortgage>
 
     <mortgage name="Interest Rate">
         <value>3.0</value>
         <type>Rate</type>
+        <unit>%</unit>
     </mortgage>
 
-    <operatingExpense name="mortgage">
+    <operatingExpense name="Mortgage">
         <value>20908.68</value>
         <type>Mortgage</type>
+        <unit>$</unit>
     </operatingExpense>
 
-    <operatingExpense name="electricity">
+    <operatingExpense name="Electricity">
         <value>1354.26</value>
         <type>Utilities</type>
+        <unit>$</unit>
     </operatingExpense>
 
-    <operatingExpense name="gas">
+    <operatingExpense name="Gas">
         <value>659.18</value>
         <type>Utilities</type>
+        <unit>$</unit>
     </operatingExpense>
 
-    <operatingExpense name="water">
+    <operatingExpense name="Water">
         <value>1855.71</value>
         <type>Utilities</type>
+        <unit>$</unit>
     </operatingExpense>
 
     <operatingExpense name="Trash">
         <value>302.76</value>
         <type>Utilities</type>
+        <unit>$</unit>
     </operatingExpense>
 
-    <operatingExpense name="lawn care">
+    <operatingExpense name="Lawn Care">
         <value>540.00</value>
         <type>Utilities</type>
+        <unit>$</unit>
     </operatingExpense>
 
-    <operatingExpense name="lawn cut">
+    <operatingExpense name="Lawn Cut">
         <value>960.00</value>
         <type>Utilities</type>
+        <unit>$</unit>
     </operatingExpense>
 
-    <operatingExpense name="pest control">
+    <operatingExpense name="Pest Control">
         <value>234.00</value>
         <type>Utilities</type>
+        <unit>$</unit>
     </operatingExpense>
 
-    <operatingExpense name="termite insurance">
+    <operatingExpense name="Termite Insurance">
         <value>270.00</value>
         <type>Utilities</type>
+        <unit>$</unit>
     </operatingExpense>
 
-    <operatingExpense name="home owners insurance">
+    <operatingExpense name="Home owners Insurance">
         <value>955.00</value>
         <type>Insurance</type>
+        <unit>$</unit>
     </operatingExpense>
 
-    <operatingExpense name="flood insurance">
+    <operatingExpense name="Flood Insurance">
         <value>572.00</value>
         <type>Insurance</type>
+        <unit>$</unit>
     </operatingExpense>
 
-    <operatingExpense name="property tax">
+    <operatingExpense name="Property Tax">
         <value>5328.00</value>
         <type>Taxes</type>
+        <unit>$</unit>
     </operatingExpense>
 </RealDealData>

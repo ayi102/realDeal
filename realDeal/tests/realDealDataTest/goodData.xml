@@ -3,25 +3,30 @@
     <revenue name="rentalIncome">
         <value>1.00</value>
         <type>rent</type>
+        <unit>$</unit>
     </revenue>
 
     <revenue name="parking">
         <value>10.00</value>
         <type>fee</type>
+        <unit>$</unit>
     </revenue>
 
     <operatingExpense name="electricity">
         <value>1.00</value>
         <type>utility</type>
+        <unit>$</unit>
     </operatingExpense>
 
     <operatingExpense name="water">
         <value>2.00</value>
         <type>utility</type>
+        <unit>$</unit>
     </operatingExpense>
 
     <operatingExpense name="propertyTax">
         <value>3.00</value>
         <type>taxes</type>
+        <unit>$</unit>
     </operatingExpense>
 </RealDealData>

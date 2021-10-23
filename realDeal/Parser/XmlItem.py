@@ -1,11 +1,12 @@
 class XmlItem():
 
-    def __init__(self, name: str, type: str, value : float):
+    def __init__(self, name: str, type: str, value : float, unit : str):
         self._name        = name
         self._type        = type
         self._value       = value
         self._percent     = 100.00
         self._typePercent = 100.00
+        self._unit        = unit
 
     @property
     def name(self):
@@ -34,6 +35,10 @@ class XmlItem():
     @typePercent.setter
     def typePercent(self, val: float):
         self._typePercent = val
+
+    @property
+    def unit(self):
+        return self._unit
 
     def __eq__(self, other):
         if other.name        == self.name    and \

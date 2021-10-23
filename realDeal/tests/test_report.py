@@ -11,11 +11,11 @@ class TestReport():
 
     def test_generateMd_when_invoked_then_file_is_generated_with_content(self):
 
-        ximRevenue        = XmlItemManager("Income")
-        operatingExpenses = XmlItemManager("Operating Expenses")
-        rev1       = XmlItem('Rental Income', 'Utility', 20.00)
-        rev2       = XmlItem('Parking', 'Utility', 20.00)
-        oe1        = XmlItem('Test', 'Fee', 10.00)
+        ximRevenue        = XmlItemManager("Income", False)
+        operatingExpenses = XmlItemManager("Operating Expenses", False)
+        rev1       = XmlItem('Rental Income', 'Utility', 20.00, '$')
+        rev2       = XmlItem('Parking', 'Utility', 20.00, '$')
+        oe1        = XmlItem('Test', 'Fee', 10.00, '$')
 
         ximRevenue.appendItems([rev1,rev2])
         operatingExpenses.appendItem(oe1)
