@@ -43,8 +43,9 @@
 ## Mortgage
 |Variable| Value |
 |--|--|
-|Loan Amount ($)|100000.0|
-|Down Payment ($)|20000.0|
-|Loan Term (Years)|30.0|
-|Interest Rate (%)|3.0|
-|**Mortgage**|337.28|
+|Loan Amount|$100000.0|
+|Down Payment|$20000.0|
+|Loan Term |30.0Yrs|
+|Interest Rate|3.0%|
+|**Mortgage Monthly**|$337.28|
+|**Mortgage Yearly**|$4047.36|

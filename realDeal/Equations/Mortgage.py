@@ -64,8 +64,9 @@ class Mortgage(Equation):
         return round(numerator/denominator,2)
 
     def getCalcString(self):
-        return ["Loan Amount ($),"   + str(self.loan),
-                "Down Payment ($),"  + str(self.downPayment),
-                "Loan Term (Years)," + str(self.years),
-                "Interest Rate (%)," + str(self.rate),
-                "**Mortgage**,"      + str(self.calculate())]
+        return ["Loan Amount,"   + '$' + str(self.loan),
+                "Down Payment,"  + '$' + str(self.downPayment),
+                "Loan Term ,"          + str(self.years) + 'Yrs',
+                "Interest Rate,"       + str(self.rate)  + '%',
+                "**Mortgage Monthly**,"  + '$' + str(self.calculate()),
+                "**Mortgage Yearly**,"   + '$' + str(round(self.calculate() * 12.0,2))]

@@ -14,8 +14,9 @@ class TestMortgage():
         assert self.morgtage.calculate() == 1028.75
 
     def test_getCalcString_when_string_is_requested_then_the_correct_string_is_returned(self):
-        assert self.morgtage.getCalcString() == ["Loan Amount ($),"   + str(self.morgtage.loan),
-                                                "Down Payment ($),"   + str(self.morgtage.downPayment),
-                                                "Loan Term (Years),"  + str(self.morgtage.years),
-                                                "Interest Rate (%),"  + str(self.morgtage.rate),
-                                                "**Morgtage**,"       + str(self.morgtage.calculate())]
+        assert self.morgtage.getCalcString() == ["Loan Amount,"         + '$' + str(self.morgtage.loan),
+                                                "Down Payment,"         + '$' + str(self.morgtage.downPayment),
+                                                "Loan Term ,"            + str(self.morgtage.years) + 'Yrs',
+                                                "Interest Rate,"        + str(self.morgtage.rate) + '%',
+                                                "**Mortgage Monthly**," + '$' + str(self.morgtage.calculate()),
+                                                "**Mortgage Yearly**,"  + '$' + str(round(self.morgtage.calculate() * 12.0,2))]
