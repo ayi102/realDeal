@@ -31,7 +31,7 @@
     </mortgage>
 
     <operatingExpense name="Mortgage">
-        <value>20908.68</value>
+        <value>15657.12</value>
         <type>Mortgage</type>
         <unit>$</unit>
     </operatingExpense>

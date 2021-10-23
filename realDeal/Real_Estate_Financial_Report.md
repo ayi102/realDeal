@@ -8,21 +8,21 @@
 |Category| Value | Type Percentage (%) | Total Percentage (%)|
 |--|--|--|--|
 |**Mortgage**| | | |
-|Mortgage|$20908.68|100.0|61.61|
+|Mortgage|$15657.12|100.0|54.58|
 |**Utilities**| | | |
-|Electricity|$1354.26|21.93|3.99|
-|Gas|$659.18|10.67|1.94|
-|Water|$1855.71|30.05|5.47|
-|Trash|$302.76|4.9|0.89|
-|Lawn Care|$540.0|8.74|1.59|
-|Lawn Cut|$960.0|15.54|2.83|
-|Pest Control|$234.0|3.79|0.69|
-|Termite Insurance|$270.0|4.37|0.8|
+|Electricity|$1354.26|21.93|4.72|
+|Gas|$659.18|10.67|2.3|
+|Water|$1855.71|30.05|6.47|
+|Trash|$302.76|4.9|1.06|
+|Lawn Care|$540.0|8.74|1.88|
+|Lawn Cut|$960.0|15.54|3.35|
+|Pest Control|$234.0|3.79|0.82|
+|Termite Insurance|$270.0|4.37|0.94|
 |**Insurance**| | | |
-|Home owners Insurance|$955.0|62.54|2.81|
-|Flood Insurance|$572.0|37.46|1.69|
+|Home owners Insurance|$955.0|62.54|3.33|
+|Flood Insurance|$572.0|37.46|1.99|
 |**Taxes**| | | |
-|Property Tax|$5328.0|100.0|15.7|
+|Property Tax|$5328.0|100.0|18.57|
 ## Mortgage Items
 |Category| Value | Type Percentage (%) | Total Percentage (%)|
 |--|--|--|--|
@@ -38,8 +38,8 @@
 |Variable| Value |
 |--|--|
 |Real Estate Revenue|$25000.0|
-|Operating Expenses|$33939.59|
-|**Net Operating Income**|$-8939.59|
+|Operating Expenses|$28688.03|
+|**Net Operating Income**|$-3688.03|
 ## Mortgage
 |Variable| Value |
 |--|--|
