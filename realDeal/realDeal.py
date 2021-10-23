@@ -27,7 +27,14 @@ noi.operatingExpenses = operatingExpenseItems.getItemsSum()
 noi.revenue           = incomeItems.getItemsSum()
 noi.isEnabled         = equationsXml.findItemEnabled('equation', 'Noi', 'enabled')
 
-equations = [noi]
+mortgage             = Mortgage("Mortgage")
+mortgage.rate        = mortgageItems.getItemValue('Interest Rate')
+mortgage.downPayment = mortgageItems.getItemValue('Down Payment')
+mortgage.years       = mortgageItems.getItemValue('Loan Term')
+mortgage.loan        = mortgageItems.getItemValue('Loan Amount')
+mortgage.isEnabled   = equationsXml.findItemEnabled('equation', 'Mortgage', 'enabled')
+
+equations = [noi, mortgage]
 
 # Display items listed in XML
 report = Report("Real Estate Financial Report", "Real_Estate_Financial_Report.md")

@@ -63,6 +63,12 @@ class XmlItemManager():
                     items.append(item.name + "," + str(round(item.value,2)) + item.unit + "," + str(round(item.typePercent,2)) + "," + str(round(item.percent, 2)))
         return items
 
+    def getItemValue(self, name: str) -> str:
+        for item in self._items:
+            if item.name == name:
+                return round(item.value, 2)
+        return None
+
     @property
     def numOfItems(self):
         return len(self._items)

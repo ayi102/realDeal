@@ -40,3 +40,11 @@
 |Real Estate Revenue|$25000.0|
 |Operating Expenses|$33939.59|
 |**Net Operating Income**|$-8939.59|
+## Mortgage
+|Variable| Value |
+|--|--|
+|Loan Amount ($)|100000.0|
+|Down Payment ($)|20000.0|
+|Loan Term (Years)|30.0|
+|Interest Rate (%)|3.0|
+|**Mortgage**|337.28|

@@ -68,4 +68,4 @@ class Mortgage(Equation):
                 "Down Payment ($),"  + str(self.downPayment),
                 "Loan Term (Years)," + str(self.years),
                 "Interest Rate (%)," + str(self.rate),
-                "**Morgtage**,"      + str(self.calculate())]
+                "**Mortgage**,"      + str(self.calculate())]
