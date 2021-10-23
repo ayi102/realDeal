@@ -7,13 +7,13 @@
     </income>
 
     <mortgage name="Loan Amount">
-        <value>100000.00</value>
+        <value>392000.00</value>
         <type>Loan</type>
         <unit>$</unit>
     </mortgage>
 
     <mortgage name="Down Payment">
-        <value>20000.00</value>
+        <value>79000.00</value>
         <type>Payment</type>
         <unit>$</unit>
     </mortgage>
@@ -25,7 +25,7 @@
     </mortgage>
 
     <mortgage name="Interest Rate">
-        <value>3.0</value>
+        <value>2.875</value>
         <type>Rate</type>
         <unit>%</unit>
     </mortgage>

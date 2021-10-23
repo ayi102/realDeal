@@ -27,13 +27,13 @@
 |Category| Value | Type Percentage (%) | Total Percentage (%)|
 |--|--|--|--|
 |**Loan**| | | |
-|Loan Amount|$100000.0|100.0|100.0|
+|Loan Amount|$392000.0|100.0|100.0|
 |**Payment**| | | |
-|Down Payment|$20000.0|100.0|100.0|
+|Down Payment|$79000.0|100.0|100.0|
 |**Term**| | | |
 |Loan Term|30.0Yrs|100.0|100.0|
 |**Rate**| | | |
-|Interest Rate|3.0%|100.0|100.0|
+|Interest Rate|2.88%|100.0|100.0|
 ## Net Operating Income
 |Variable| Value |
 |--|--|
@@ -43,9 +43,9 @@
 ## Mortgage
 |Variable| Value |
 |--|--|
-|Loan Amount|$100000.0|
-|Down Payment|$20000.0|
+|Loan Amount|$392000.0|
+|Down Payment|$79000.0|
 |Loan Term |30.0Yrs|
-|Interest Rate|3.0%|
-|**Mortgage Monthly**|$337.28|
-|**Mortgage Yearly**|$4047.36|
+|Interest Rate|2.88%|
+|**Mortgage Monthly**|$1299.45|
+|**Mortgage Yearly**|$15593.4|
