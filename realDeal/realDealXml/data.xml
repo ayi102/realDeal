@@ -30,7 +30,7 @@
         <unit>%</unit>
     </mortgage>
 
-    <operatingExpense name="Mortgage">
+    <operatingExpense name="Vacancy Allowance">
         <value>15657.12</value>
         <type>Mortgage</type>
         <unit>$</unit>
