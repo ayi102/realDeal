@@ -31,9 +31,9 @@
 |**Payment**| | | |
 |Down Payment|$20000.0|100.0|100.0|
 |**Term**| | | |
-|Loan Term|Years30.0|100.0|100.0|
+|Loan Term|30.0Yrs|100.0|100.0|
 |**Rate**| | | |
-|Interest Rate|%3.0|100.0|100.0|
+|Interest Rate|3.0%|100.0|100.0|
 ## Net Operating Income
 |Variable| Value |
 |--|--|
