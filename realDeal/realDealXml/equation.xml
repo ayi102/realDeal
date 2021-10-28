@@ -6,4 +6,7 @@
     <equation name="Mortgage">
         <enabled>True</enabled>
     </equation>
+    <equation name="VacancyAllowance">
+        <enabled>True</enabled>
+    </equation>
 </RealDealEquations>

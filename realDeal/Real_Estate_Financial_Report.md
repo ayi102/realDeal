@@ -8,7 +8,7 @@
 |Category| Value | Type Percentage (%) | Total Percentage (%)|
 |--|--|--|--|
 |**Mortgage**| | | |
-|Mortgage|$15657.12|100.0|54.58|
+|Vacancy Allowance|$15657.12|100.0|54.58|
 |**Utilities**| | | |
 |Electricity|$1354.26|21.93|4.72|
 |Gas|$659.18|10.67|2.3|
@@ -34,6 +34,13 @@
 |Loan Term|30.0Yrs|100.0|100.0|
 |**Rate**| | | |
 |Interest Rate|2.88%|100.0|100.0|
+## Vacancy Items
+|Category| Value | Type Percentage (%) | Total Percentage (%)|
+|--|--|--|--|
+|**Income**| | | |
+|Gross Scheduled Income|$25000.0|100.0|100.0|
+|**Rate**| | | |
+|Vacancy Estimate|6.0%|100.0|100.0|
 ## Net Operating Income
 |Variable| Value |
 |--|--|
@@ -49,3 +56,9 @@
 |Interest Rate|2.88%|
 |**Mortgage Monthly**|$1299.45|
 |**Mortgage Yearly**|$15593.4|
+## Vacancy Allowance
+|Variable| Value |
+|--|--|
+|Gross Scheduled Income|$25000.0|
+|Vacancy Estimate|6.0%|
+|**Vacancy Allowance**|$1500.0|

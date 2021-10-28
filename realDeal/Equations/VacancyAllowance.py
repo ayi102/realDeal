@@ -40,6 +40,6 @@ class VacancyAllowance(Equation):
         return round(self._grossScheduledIncome * (self._vacancyEstimate/100),2)
 
     def getCalcString(self):
-        return ["Gross ScheduledIncome,"    + '$' + str(self.grossScheduledIncome),
+        return ["Gross Scheduled Income,"    + '$' + str(self.grossScheduledIncome),
                 "Vacancy Estimate,"         + str(self.vacancyEstimate) + '%',
                 "**Vacancy Allowance**," + '$' + str(self.calculate())]

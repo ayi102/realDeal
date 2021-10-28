@@ -33,6 +33,6 @@ class TestVacancyAllowance():
         self.vacancyAllowance.vacancyEstimate      = 2.0
         self.vacancyAllowance.grossScheduledIncome = 100.0
 
-        assert self.vacancyAllowance.getCalcString() ==["Gross ScheduledIncome,$100.0",
+        assert self.vacancyAllowance.getCalcString() ==["Gross Scheduled Income,$100.0",
                                                         "Vacancy Estimate,2.0%",
                                                         "**Vacancy Allowance**,$2.0"]

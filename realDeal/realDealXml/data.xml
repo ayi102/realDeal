@@ -101,4 +101,16 @@
         <type>Taxes</type>
         <unit>$</unit>
     </operatingExpense>
+
+    <vacancyAllowance name="Gross Scheduled Income">
+        <value>25000.00</value>
+        <type>Income</type>
+        <unit>$</unit>
+    </vacancyAllowance>
+
+    <vacancyAllowance name="Vacancy Estimate">
+        <value>6.0</value>
+        <type>Rate</type>
+        <unit>%</unit>
+    </vacancyAllowance>
 </RealDealData>
