@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <RealDealData>
     <income name="Rental Income">
-        <value>25000.00</value>
+        <value>30000.00</value>
         <type>Rent</type>
         <unit>$</unit>
     </income>
@@ -31,8 +31,8 @@
     </mortgage>
 
     <operatingExpense name="Vacancy Allowance">
-        <value>15657.12</value>
-        <type>Mortgage</type>
+        <value>1800.00</value>
+        <type>Vacancy</type>
         <unit>$</unit>
     </operatingExpense>
 
@@ -101,12 +101,6 @@
         <type>Taxes</type>
         <unit>$</unit>
     </operatingExpense>
-
-    <vacancyAllowance name="Gross Scheduled Income">
-        <value>25000.00</value>
-        <type>Income</type>
-        <unit>$</unit>
-    </vacancyAllowance>
 
     <vacancyAllowance name="Vacancy Estimate">
         <value>6.0</value>

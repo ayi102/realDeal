@@ -16,15 +16,20 @@ equationsXml = XmlParser(equationXmlPath)
 # Item Management
 incomeItems  = XmlItemManager("Income", False)
 incomeItems.appendItems(dataXml.getAllItems('income'))
+incomeItems.isEnabled = equationsXml.findItemEnabled( 'Noi')
 
 operatingExpenseItems = XmlItemManager("Operating Expenses", False)
 operatingExpenseItems.appendItems(dataXml.getAllItems('operatingExpense'))
+operatingExpenseItems.isEnabled = equationsXml.findItemEnabled( 'Noi')
 
 mortgageItems = XmlItemManager("Mortgage Items", True)
 mortgageItems.appendItems(dataXml.getAllItems("mortgage"))
+mortgageItems.isEnabled = equationsXml.findItemEnabled('Mortgage')
 
 vacancyItems = XmlItemManager("Vacancy Items", True)
 vacancyItems.appendItems(dataXml.getAllItems("vacancyAllowance"))
+vacancyItems.isEnabled = equationsXml.findItemEnabled('VacancyAllowance')
+
 itemManagers = [incomeItems, operatingExpenseItems, mortgageItems, vacancyItems]
 
 # Equations
@@ -41,7 +46,7 @@ mortgage.loan        = mortgageItems.getItemValue('Loan Amount')
 mortgage.isEnabled   = equationsXml.findItemEnabled('Mortgage')
 
 vacancyAllowance                      = VacancyAllowance("Vacancy Allowance")
-vacancyAllowance.grossScheduledIncome = vacancyItems.getItemValue('Gross Scheduled Income')
+vacancyAllowance.grossScheduledIncome = incomeItems.getItemsSum()
 vacancyAllowance.vacancyEstimate      = vacancyItems.getItemValue('Vacancy Estimate')
 vacancyAllowance.isEnabled            = equationsXml.findItemEnabled('VacancyAllowance')
 
@@ -51,13 +56,14 @@ equations = [noi, mortgage, vacancyAllowance]
 report = Report("Real Estate Financial Report", "Real_Estate_Financial_Report.md")
 
 for  im in itemManagers:
-    report.addContent("Header", im.name)
-    types = im.getTypes()
-    for type in types:
-        items = im.getItems(type)
-        report.addContent("Type", type)
-        for item in items:
-            report.addContent("Item", item)
+    if im.isEnabled:
+        report.addContent("Header", im.name)
+        types = im.getTypes()
+        for type in types:
+            items = im.getItems(type)
+            report.addContent("Type", type)
+            for item in items:
+                report.addContent("Item", item)
 
 # Calculate equations
 for equation in equations:
