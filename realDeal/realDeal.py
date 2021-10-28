@@ -31,19 +31,19 @@ itemManagers = [incomeItems, operatingExpenseItems, mortgageItems, vacancyItems]
 noi = Noi("Net Operating Income")
 noi.operatingExpenses = operatingExpenseItems.getItemsSum()
 noi.revenue           = incomeItems.getItemsSum()
-noi.isEnabled         = equationsXml.findItemEnabled('equation', 'Noi', 'enabled')
+noi.isEnabled         = equationsXml.findItemEnabled( 'Noi')
 
 mortgage             = Mortgage("Mortgage")
 mortgage.rate        = mortgageItems.getItemValue('Interest Rate')
 mortgage.downPayment = mortgageItems.getItemValue('Down Payment')
 mortgage.years       = mortgageItems.getItemValue('Loan Term')
 mortgage.loan        = mortgageItems.getItemValue('Loan Amount')
-mortgage.isEnabled   = equationsXml.findItemEnabled('equation', 'Mortgage', 'enabled')
+mortgage.isEnabled   = equationsXml.findItemEnabled('Mortgage')
 
 vacancyAllowance                      = VacancyAllowance("Vacancy Allowance")
 vacancyAllowance.grossScheduledIncome = vacancyItems.getItemValue('Gross Scheduled Income')
 vacancyAllowance.vacancyEstimate      = vacancyItems.getItemValue('Vacancy Estimate')
-vacancyAllowance.isEnabled            = equationsXml.findItemEnabled('equation', 'VacancyAllowance', 'enabled')
+vacancyAllowance.isEnabled            = equationsXml.findItemEnabled('VacancyAllowance')
 
 equations = [noi, mortgage, vacancyAllowance]
 

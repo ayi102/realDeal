@@ -9,8 +9,8 @@ class XmlParser(Parser):
         # create element tree object
         self.root = ET.parse(self.file).getroot()
 
-    def findItemEnabled(self, item, itemName, itemEnabled):
-        for item in self.root.findall(item):
+    def findItemEnabled(self, itemName, itemType='equation', itemEnabled='enabled'):
+        for item in self.root.findall(itemType):
             if item.attrib["name"] == itemName:
                 value = item.find(itemEnabled)
                 if value != None:

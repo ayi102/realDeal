@@ -7,7 +7,7 @@ class Parser(ABC):
         self.file = file
 
     @abstractmethod
-    def findItemEnabled(self, item, itemName, itemEnabled):
+    def findItemEnabled(self, itemName, itemType, itemEnabled):
         pass
 
     @abstractmethod

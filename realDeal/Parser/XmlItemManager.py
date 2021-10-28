@@ -3,9 +3,10 @@ from Parser.XmlItem import XmlItem
 class XmlItemManager():
 
     def __init__(self, name, ignore):
-        self._name    = name
-        self._items   = []
-        self._ignore  = ignore
+        self._name      = name
+        self._items     = []
+        self._ignore    = ignore
+        self._isEnabled = False
 
     def appendItem(self, item: XmlItem):
         self._items.append(item)
@@ -98,3 +99,11 @@ class XmlItemManager():
                     if currItem.type == testItem.type:
                         typeSum = typeSum + testItem.value
                 currItem.typePercent = (currItem.value/typeSum) * 100.00
+
+    @property
+    def isEnabled(self):
+        return self._isEnabled
+
+    @isEnabled.setter
+    def isEnabled(self, val):
+        self._isEnabled = val

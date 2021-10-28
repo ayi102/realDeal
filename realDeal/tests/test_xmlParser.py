@@ -20,20 +20,20 @@ class TestXmlParser():
         self.badEquation   = XmlParser(badEquationXmlPath)
 
     def test_findItemEnabled_when_there_an_equation_is_enabled_then_detect_it_is(self):
-        assert self.goodEquation.findItemEnabled('equation', 'NOI', 'enabled') == True
+        assert self.goodEquation.findItemEnabled('NOI') == True
 
     def test_findItemEnabled_when_there_an_equation_is_enabled_then_detect_it_is(self):
-        assert self.goodEquation.findItemEnabled('equation', 'eq2', 'enabled') == False
+        assert self.goodEquation.findItemEnabled('eq2') == False
 
     def test_findItemEnabled_when_there_is_an_invalid_enabled_variable_then_throw_exception(self):
         try:
-            self.badEquation.findItemEnabled('equation', 'NOI', 'enabled') == True
+            self.badEquation.findItemEnabled('NOI') == True
         except:
             assert True
 
     def test_findItemEnabled_when_there_is_an_invalid_equation_variable_then_throw_exception(self):
         try:
-            self.badEquation.findItemEnabled('equation', 'eq2', 'enabled') == True
+            self.badEquation.findItemEnabled('eq2') == True
         except:
             assert True
 
