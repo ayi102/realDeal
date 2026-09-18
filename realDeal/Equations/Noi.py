@@ -43,3 +43,23 @@ class Noi(Equation):
         return ["Real Estate Revenue,"      + '$' + str(self.revenue),
                 "Operating Expenses,"       + '$' + str(self.operatingExpenses),
                 "**Net Operating Income**," + '$' + str(self.calculate())]
+
+    def calculateProjections(self, annualRevenueIncrease, annualExpenseIncrease, years):
+
+        calculations = []
+        for i in range(0, years):
+            calculations.append(self.calculate())
+            self._revenue = self._revenue * (1.0 + annualRevenueIncrease/100.0)
+            self._operatingExpenses = self._operatingExpenses * (1.0 + annualExpenseIncrease/100.0)
+
+        return calculations
+
+    def getCalcProjectString(self, calculations):
+        cnt = 1
+        projection = []
+        for noiCalc in calculations:
+            projection.append("Year " + str(cnt))
+            projection.append("$ " + str(noiCalc))
+            cnt = cnt + 1
+
+        return projection

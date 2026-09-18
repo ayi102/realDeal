@@ -36,3 +36,16 @@ class TestNoi():
         assert self.noi.getCalcString() ==[("Real Estate Revenue,$2.0"),
                                             ("Operating Expenses,$1.0"),
                                             ("**Net Operating Income**,$1.0")]
+
+    def test_calculateProjects_when_values_are_valid_then_list_is_valid(self):
+        self.noi.revenue = 258408.0
+        self.noi.operatingExpenses = 122820.0
+
+        assert [135588.0, 139655.64, 143845.31, 148160.67, 152605.49] == self.noi.calculateProjections(3,3,5)
+
+    def test_getCalcProjectString_when_values_are_valid_then_get_correct_string(self):
+        self.noi.revenue = 258408.0
+        self.noi.operatingExpenses = 122820.0
+        calcs = self.noi.calculateProjections(3,3,5)
+        assert ['Year 1', '$ 135588.0', 'Year 2', '$ 139655.64', 'Year 3', '$ 143845.31', 'Year 4', '$ 148160.67', 'Year 5', '$ 152605.49'] == self.noi.getCalcProjectString(calcs)
+

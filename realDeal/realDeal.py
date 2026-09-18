@@ -74,4 +74,5 @@ for equation in equations:
         for calculation in calculations:
             report.addContent("Item", calculation)
 
+# Print Projections
 report.generateMd()
